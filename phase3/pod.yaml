@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-logger
+  namespace: test
+  labels:
+    app: hello-logger
+spec:
+  containers:
+  - name: logger
+    image: busybox
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do
+          echo "Hello Loki $(date)";
+          sleep 5;
+        done
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "50m"
+

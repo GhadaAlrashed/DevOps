@@ -1,0 +1,15 @@
+role: Agent
+
+sources:
+  kubernetes_logs:
+    type: kubernetes_logs
+
+sinks:
+  loki:
+    type: loki
+    inputs:
+      - kubernetes_logs
+    endpoint: http://loki.logging.svc.cluster.local:3100
+    labels:
+      app: "{{ kubernetes.pod_labels.app }}"
+

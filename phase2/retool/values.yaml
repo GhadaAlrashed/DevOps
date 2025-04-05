@@ -1,0 +1,12 @@
+config:
+  encryptionKey: "y6gEw3aPU1/j4mlT/gK0Ug5IJZHpnFIlGNzzK93/oHQ="
+image:
+  tag: 3.75.20-stable
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+
